@@ -21,25 +21,15 @@
       <button class="nav-toggle" aria-label="Otwórz menu">&#9776;</button>
       <nav class="nav">
         <ul class="nav-menu">
-          <li>
-            <a href="#products" class="nav-link">Produkty</a>
-          </li>
-          <li>
-            <a href="#about" class="nav-link">O nas</a>
-          </li>
-          <li>
-            <a href="#contact" class="nav-link">Kontakt</a>
-          </li>
+          <li><a href="#products" class="nav-link">Produkty</a></li>
+          <li><a href="#about" class="nav-link">O nas</a></li>
+          <li><a href="#contact" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
     </header>
 
     <section class="hero">
-      <img
-        class="hero-banner"
-        src="src/images/hero.png"
-        alt="Bose headphones"
-      />
+      <img class="hero-banner" src="src/images/hero.png" alt="Bose headphones" />
       <div class="hero-content">
         <h1>Bose: Doświadcz dźwięku przyszłości</h1>
         <p>The world shakes. Your music shines.</p>
@@ -48,12 +38,9 @@
     </section>
 
     <main>
-      <section class="products-list" id="products">
+      <section class="products-list section-wrapper" id="products">
         <div class="product-card">
-          <img
-            src="src/images/bose-portable-smart-speaker.png"
-            alt="Bose portable Smart speaker"
-          />
+          <img src="src/images/bose-portable-smart-speaker.png" alt="Bose portable Smart speaker" />
           <div class="product-info">
             <h3>Bose portable Smart speaker</h3>
             <p>Smart home</p>
@@ -61,10 +48,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img
-            src="src/images/soundlink-color-bluetooth-speaker-2.png"
-            alt="SoundLink Color Bluetooth speaker II"
-          />
+          <img src="src/images/soundlink-color-bluetooth-speaker-2.png" alt="SoundLink Color Bluetooth speaker II" />
           <div class="product-info">
             <h3>SoundLink Color Bluetooth speaker II</h3>
             <p>Portable bluetooth</p>
@@ -72,10 +56,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img
-            src="src/images/soundlink-flex-bluetooth-speaker.png"
-            alt="SoundLink Flex Bluetooth speaker"
-          />
+          <img src="src/images/soundlink-flex-bluetooth-speaker.png" alt="SoundLink Flex Bluetooth speaker" />
           <div class="product-info">
             <h3>SoundLink Flex Bluetooth speaker</h3>
             <p>Portable bluetooth</p>
@@ -84,38 +65,25 @@
         </div>
       </section>
 
-      <section class="categories-header">
+      <section class="categories-header section-wrapper">
         <h2 class="categories-title">
-          Browse Bose
-          <br />
+          Browse Bose<br>
           products by category
         </h2>
       </section>
-      <section class="categories-grid-section">
-        <div class="categories-grid-wrapper">
-          <div class="category-grid-item">
-            <img
-              src="src/images/Middle-2.png"
-              alt="Speakers"
-            />
-            <p class="category-grid-label">Speakers</p>
-          </div>
-          <div class="category-grid-item">
-            <img
-              src="src/images/Middle-3.png"
-              alt="Audio sunglasses"
-            />
-            <p class="category-grid-label">Audio sunglasses</p>
-          </div>
+      <section class="categories-grid-section section-wrapper">
+        <div class="categories-grid-vertical">
+          <img src="src/images/Middle-2.png" alt="Speakers" class="categories-image">
+          <img src="src/images/Middle-3.png" alt="Audio sunglasses" class="categories-image">
         </div>
       </section>
 
-      <section class="about" id="about">
+      <section class="about section-wrapper" id="about">
         <h2>O nas</h2>
         <p>Bose to światowy lider w dziedzinie innowacji dźwięku.</p>
       </section>
 
-      <section class="contact" id="contact">
+      <section class="contact section-wrapper" id="contact">
         <h2>Kontakt</h2>
         <p>
           <a href="tel:+48123456789" class="contact-link">+48 123 456 789</a><br>
@@ -133,19 +101,13 @@
       </section>
     </main>
 
-    <section class="bottom-banner">
+    <section class="bottom-banner section-wrapper">
       <img src="src/images/Bottom.png" alt="Bose bottom graphic" />
     </section>
 
     <footer class="footer">
       <p>&copy; 2025 Bose. All rights reserved.</p>
     </footer>
-    <script src="src/scripts/main.js"></script>
+    <script type="module" src="src/scripts/main.js"></script>
   </body>
 </html>
-.hero-content h1 {
-  margin-top: 80px;
-  margin-bottom: 1rem;
-  font-size: 2.25rem;
-  font-weight: 700;
-}
