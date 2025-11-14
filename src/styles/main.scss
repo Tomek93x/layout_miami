@@ -277,11 +277,14 @@ body {
   background: #005fa3;
 }
 
-/* Dodaj poniżej, jako osobny blok */
 .contact-link {
   color: #181818;
   text-decoration: none;
   transition: color 0.2s;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .contact-link:hover,
@@ -357,4 +360,9 @@ body {
   .category-single img {
     max-width: 98vw;
   }
+
+}
+.product-card img:hover {
+  transform: scale(1.08) !important;
+  transition: transform 0.22s !important;
 }
