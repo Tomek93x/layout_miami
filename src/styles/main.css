@@ -104,7 +104,9 @@ img {
   max-width: 440px;
 }
 
+/* Miami: h1 dokładnie 80px od dolnej krawędzi headera */
 .hero-content h1 {
+  margin-top: 80px;
   margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: 700;
@@ -306,6 +308,7 @@ img {
   background: #fff;
 }
 
+/* --- Responsive --- */
 @media (max-width: 900px) {
   .categories-grid {
     grid-template-columns: 1fr;
@@ -315,6 +318,48 @@ img {
     width: 100vw;
     max-width: 100vw;
     height: auto;
+  }
+  .nav-toggle {
+    cursor: pointer;
+
+    position: absolute;
+    z-index: 99;
+    top: 24px;
+    right: 20px;
+
+    display: block;
+
+    border: none;
+
+    font-size: 2rem;
+
+    background: none;
+  }
+  .nav {
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    left: 0;
+
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100vw;
+    height: 100vh;
+    padding-top: 80px;
+
+    background: #fff;
+  }
+  .nav.open {
+    display: flex;
+  }
+  .nav-menu {
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
   }
 }
 
@@ -373,51 +418,7 @@ img:hover {
   transition: transform 0.22s ease;
 }
 
-@media (max-width: 900px) {
-  .nav-toggle {
-    cursor: pointer;
-
-    position: absolute;
-    z-index: 99;
-    top: 24px;
-    right: 20px;
-
-    display: block;
-
-    border: none;
-
-    font-size: 2rem;
-
-    background: none;
-  }
-  .nav {
-    position: fixed;
-    z-index: 98;
-    top: 0;
-    left: 0;
-
-    overflow-y: auto;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    width: 100vw;
-    height: 100vh;
-    padding-top: 80px;
-
-    background: #fff;
-  }
-  .nav.open {
-    display: flex;
-  }
-  .nav-menu {
-    flex-direction: column;
-    gap: 2.5rem;
-    margin-top: 2rem;
-  }
-}
-
+/* Dodatkowy fix dla hamburgera */
 .nav-toggle {
   display: none;
 }
@@ -428,6 +429,7 @@ img:hover {
   }
 }
 
+/* Zablokuj scroll pod menu */
 .body--locked {
   overflow: hidden;
   height: 100vh;
