@@ -278,13 +278,14 @@ body {
 }
 
 .contact-link {
-  color: #181818;
-  text-decoration: none;
-  transition: color 0.2s;
   font-family: Inter, Arial, sans-serif;
   font-size: 1.05rem;
   font-weight: 500;
+  color: #181818;
+  text-decoration: none;
   letter-spacing: 0.01em;
+
+  transition: color 0.2s;
 }
 
 .contact-link:hover,
@@ -362,7 +363,8 @@ body {
   }
 
 }
-.product-card img:hover {
-  transform: scale(1.08) !important;
-  transition: transform 0.22s !important;
+
+img:hover {
+  transform: scale(1.08);
+  transition: transform 0.22s;
 }
