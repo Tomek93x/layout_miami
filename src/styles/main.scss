@@ -20,6 +20,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  transition: transform 0.22s ease;
 }
 
 .header {
@@ -58,7 +59,7 @@ img {
   color: #1a88ff;
   text-decoration: none;
 
-  transition: color 0.2s;
+  transition: color 0.22s ease;
 }
 
 .nav-link:hover,
@@ -121,7 +122,7 @@ img {
 
   background: #1a88ff;
 
-  transition: background 0.2s;
+  transition: background 0.22s ease;
 }
 
 .btn:hover {
@@ -168,6 +169,8 @@ img {
 
   background: #e8f5ff;
   box-shadow: 0 1.5px 9px rgba(174, 209, 238, 0.13);
+
+  transition: transform 0.22s ease;
 }
 
 .categories {
@@ -210,6 +213,8 @@ img {
 
   object-fit: cover;
   box-shadow: 0 2px 14px rgba(182, 214, 238, 0.15);
+
+  transition: transform 0.22s ease;
 }
 
 .category-label {
@@ -271,7 +276,7 @@ img {
 
   background: #1a88ff;
 
-  transition: background 0.2s;
+  transition: background 0.22s ease;
 }
 
 .contact button[type='submit']:hover {
@@ -356,5 +361,5 @@ img {
 
 img:hover {
   transform: scale(1.08);
-  transition: transform 0.22s;
+  transition: transform 0.22s ease;
 }
