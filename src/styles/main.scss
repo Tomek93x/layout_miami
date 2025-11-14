@@ -277,6 +277,19 @@ body {
   background: #005fa3;
 }
 
+/* Dodaj poniżej, jako osobny blok */
+.contact-link {
+  color: #181818;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  color: #1a88ff;
+  text-decoration: underline;
+}
+
 .footer {
   margin-top: 2.6rem;
   padding: 1.6rem 0 0.6rem;
