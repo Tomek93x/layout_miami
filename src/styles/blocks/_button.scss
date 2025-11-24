@@ -1,0 +1,52 @@
+@use '../utils/vars' as *;
+@use '../utils/mixins' as *;
+
+.button {
+  grid-column: span 2;
+
+  box-sizing: border-box;
+  height: 56px;
+  margin-top: 40px;
+  border-radius: 40px;
+
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  line-height: 56px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: $c-font;
+
+  @include for-tablet {
+    grid-column: 2 / 6;
+    margin-top: 64px;
+  }
+
+  @include for-desktop {
+    grid-column: 5 / 9;
+  }
+
+  &:hover {
+    border: 3px solid $c-font;
+    line-height: 50px;
+    color: $c-font;
+    background-color: white;
+  }
+
+  &:active {
+    color: white;
+    background-color: #111;
+  }
+
+  &--primary {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+
+    &:hover {
+      line-height: 27px;
+    }
+  }
+}

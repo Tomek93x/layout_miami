@@ -1,23 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
+'use strict';
 
-  navToggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    document.body.classList.toggle('body--locked', nav.classList.contains('open'));
-  });
-
-  const form = document.querySelector('form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-    });
+window.addEventListener('hashchange', () => {
+  // Gdy menu jest otwarte (hash == #menu), blokuj scroll strony
+  if (window.location.hash === '#menu') {
+    document.body.classList.add('locked-scroll');
+  } else {
+    document.body.classList.remove('locked-scroll');
   }
-
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      document.body.classList.remove('body--locked');
-    });
-  });
 });

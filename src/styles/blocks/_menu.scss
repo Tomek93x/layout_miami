@@ -1,0 +1,139 @@
+@use '../utils/vars' as *;
+@use '../utils/mixins' as *;
+
+.menu {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(100%);
+
+  overflow: hidden !important; // BLOKADA SCROLLA
+
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  padding-top: 28px;
+
+  background-color: #e8eff9;
+
+  transition: transform 0.4s ease-in-out;
+
+  @include for-tablet {
+    padding-top: 36px;
+  }
+
+  @include for-desktop {
+    padding-top: 36px;
+  }
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  // Nawigacja/logo/krzyżyk
+  &__navigation {
+    display: flex;
+    grid-column: span 2;
+    align-items: center;
+    justify-content: space-between;
+
+    @include for-tablet {
+      grid-column: span 6;
+    }
+
+    @include for-desktop {
+      grid-column: span 12;
+    }
+  }
+
+  // Sekcja z linkami menu
+  &__links {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+
+    @include for-tablet {
+      grid-column: span 6;
+      margin-top: 50px;
+    }
+
+    @include for-desktop {
+      grid-column: span 12;
+      margin-top: 50px;
+    }
+  }
+
+  // Lista wszystkich linków (np. HOME, etc.)
+  .links__list {
+    overflow: hidden;
+
+    /* Najbardziej pewna blokada wysokości i scrolla */
+    max-height: calc(100vh - 120px); // 120px - zostawia miejsce na logo/górę
+    margin: 0;
+    padding-top: 12px;
+    padding-left: 20px;
+
+    list-style: none;
+  }
+  .links__item {
+    margin-bottom: 32px;
+  }
+  .links__link {
+    border-bottom: solid 1px transparent;
+
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $c-font;
+    text-align: left;
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    transition:
+      border-bottom 0.15s,
+      padding-bottom 0.15s;
+    &:hover {
+      padding-bottom: 4px;
+      border-bottom: solid 1px $c-font;
+    }
+  }
+
+  &__paragraph {
+    grid-column: span 2;
+
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 20px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+    color: $c-font;
+    text-align: left;
+
+    @include for-tablet {
+      grid-column: span 6;
+    }
+
+    @include for-desktop {
+      grid-column: span 12;
+    }
+  }
+
+  &__link {
+    padding-bottom: 8px;
+    border-bottom: solid 1px $c-font;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $c-font;
+    text-align: left;
+    text-decoration: none;
+    letter-spacing: 2px;
+  }
+}

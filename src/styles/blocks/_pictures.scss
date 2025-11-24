@@ -1,0 +1,65 @@
+@use '../utils/vars' as *;
+@use '../utils/mixins' as *;
+
+.pictures {
+  @include grid;
+
+  @include for-tablet {
+    margin-top: 24px;
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    margin-top: 48px;
+    padding-top: 100%;
+
+    @include for-tablet {
+      padding-top: 184px;
+    }
+
+    @include for-desktop {
+      padding-top: 324px;
+    }
+
+    &--big {
+      @include for-tablet {
+        grid-column: span 4;
+      }
+
+      @include for-desktop {
+        grid-column: span 8;
+      }
+    }
+
+    &--small {
+      @include for-tablet {
+        grid-column: span 2;
+      }
+
+      @include for-desktop {
+        grid-column: span 4;
+      }
+    }
+
+    &--distance {
+      margin-top: 40px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+
+    @include for-desktop {
+      transition: transform 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        z-index: 1;
+        transform: scale(106%);
+      }
+    }
+  }
+}
