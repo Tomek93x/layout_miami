@@ -1361,6 +1361,6 @@ html.body--menu-open {
 }
 
 .menu--open {
-  height: 100vh;
   overflow: auto;
+  height: 100vh;
 }
