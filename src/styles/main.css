@@ -1357,7 +1357,7 @@ body.locked-scroll {
 }
 
 html.body--menu-open {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .menu--open {
