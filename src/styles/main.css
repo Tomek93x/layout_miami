@@ -1351,3 +1351,7 @@ body.locked-scroll {
   overflow: hidden !important;
   max-height: 100vh !important;
 }
+
+.body--menu-open {
+  overflow: hidden;
+}
