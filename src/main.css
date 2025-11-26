@@ -657,7 +657,6 @@ h1 {
   transform: translateX(100%);
 
   overflow: hidden !important;
-  overflow-y: auto !important;
   display: grid;
   grid-template-columns: repeat(2, 130px);
   gap: 0 20px;
