@@ -1355,3 +1355,12 @@ body.locked-scroll {
 .body--menu-open {
   overflow: hidden;
 }
+
+html.body--menu-open {
+  overflow: hidden;
+}
+
+.menu--open {
+  height: 100vh;
+  overflow: auto;
+}
