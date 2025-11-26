@@ -410,7 +410,10 @@
       >
         <h2 class="title title--secondary">Contact us</h2>
         <div class="contact">
-          <form class="form contact__form">
+          <form
+            class="form contact__form"
+            id="contactForm"
+          >
             <div class="form__item">
               <label
                 class="form__label"
@@ -424,6 +427,7 @@
                 class="form__input"
                 type="text"
                 placeholder="Name"
+                autocomplete="name"
               />
             </div>
             <div class="form__item">
@@ -439,6 +443,9 @@
                 class="form__input"
                 type="email"
                 placeholder="Email"
+                autocomplete="email"
+                pattern="^[^@]+@[^@]+\.[^@]+$"
+                title="Enter a valid email address"
               />
             </div>
             <div class="form__item">
@@ -453,15 +460,17 @@
                 id="message"
                 class="form__textarea"
                 placeholder="Message"
+                autocomplete="off"
               ></textarea>
             </div>
             <button
-              type="button"
+              type="submit"
               class="button button--primary"
             >
               Send
             </button>
           </form>
+
           <address class="address address--distance contact__address">
             <h3 class="address__label">Phone</h3>
             <p class="address__content">+1 234 5555-55-55</p>

@@ -214,11 +214,11 @@ h1 {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 130px);
-  gap: 20px;
-  justify-content: center;
-
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2vw;
+  padding: 0 2vw;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media (min-width: 744px) {
