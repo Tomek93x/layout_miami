@@ -109,11 +109,15 @@ h1 {
 
   box-sizing: border-box;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2vw;
 }
 
 .navigation__logo {
-  width: 125px;
-  height: 16px;
+  width: clamp(90px, 10vw, 180px);
+  height: auto;
+  margin-left: 0.5vw;
 }
 
 /* Dodatkowe media queries możesz dodawać analogicznie niżej */
@@ -121,8 +125,9 @@ h1 {
 
 @media (min-width: 744px) {
   .navigation__logo {
-    width: 188px;
-    height: 24px;
+    width: 125px;
+    max-width: 60vw;
+    height: 16px;
   }
 }
 
@@ -651,26 +656,26 @@ h1 {
 
 .menu {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  z-index: 10;
+  inset: 0;
   transform: translateX(100%);
 
-  overflow: hidden !important;
+  overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(2, 130px);
-  gap: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2vw;
   place-content: start center;
   justify-content: center;
 
   box-sizing: border-box;
   height: 100vh;
-  max-height: 100vh !important;
   padding-top: 28px;
 
+  visibility: hidden;
+  opacity: 0;
   background-color: #e8eff9;
 
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, opacity 0.4s, visibility 0.4s;
 }
 
 @media (min-width: 744px) {
@@ -692,7 +697,8 @@ h1 {
 /* Pseudo-klasa po bazowym selektorze — brak powtórzeń! */
 .menu:target {
   transform: translateX(0);
-
+  visibility: visible;
+  opacity: 1;
 }
 
 /* menu__links */
