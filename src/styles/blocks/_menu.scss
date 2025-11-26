@@ -10,6 +10,7 @@
   transform: translateX(100%);
 
   overflow-y: hidden !important; // BLOKADA SCROLLA - najpewniej na buildzie i lokalnie
+
   box-sizing: border-box;
   width: 100vw;
   height: 100vh !important;
@@ -17,11 +18,13 @@
   padding-top: 28px;
 
   background-color: #e8eff9;
+
   transition: transform 0.4s ease-in-out;
 
   @include for-tablet {
     padding-top: 36px;
   }
+
   @include for-desktop {
     padding-top: 36px;
   }
@@ -40,6 +43,7 @@
     @include for-tablet {
       grid-column: span 6;
     }
+
     @include for-desktop {
       grid-column: span 12;
     }
@@ -56,6 +60,7 @@
       grid-column: span 6;
       margin-top: 50px;
     }
+
     @include for-desktop {
       grid-column: span 12;
       margin-top: 50px;
@@ -65,10 +70,12 @@
   /* Lista wszystkich linków (np. HOME, etc.) */
   .links__list {
     overflow-y: hidden !important; // BLOKADA scrolla na liście
+
     max-height: calc(100vh - 120px); // zostawia miejsce na logo/górę
     margin: 0;
     padding-top: 12px;
     padding-left: 20px;
+
     list-style: none;
   }
   .links__item {
@@ -76,6 +83,7 @@
   }
   .links__link {
     border-bottom: solid 1px transparent;
+
     font-size: 22px;
     font-weight: 700;
     line-height: 22px;
@@ -83,6 +91,7 @@
     text-align: left;
     text-decoration: none;
     letter-spacing: 2px;
+
     transition: border-bottom 0.15s, padding-bottom 0.15s;
 
     &:hover {
@@ -107,6 +116,7 @@
     @include for-tablet {
       grid-column: span 6;
     }
+
     @include for-desktop {
       grid-column: span 12;
     }

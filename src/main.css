@@ -216,9 +216,10 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 2vw;
-  padding: 0 2vw;
+
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2vw;
 }
 
 @media (min-width: 744px) {
