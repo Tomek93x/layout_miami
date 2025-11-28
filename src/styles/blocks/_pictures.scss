@@ -15,7 +15,6 @@
 
   &__item {
     position: relative;
-
     width: 100%;
     margin-top: 48px;
     padding-top: 100%;
@@ -64,8 +63,8 @@
       transition: transform 0.2s;
 
       &:hover {
-        z-index: 1;
         cursor: pointer;
+        z-index: 1;
         transform: scale(1.06);
       }
     }

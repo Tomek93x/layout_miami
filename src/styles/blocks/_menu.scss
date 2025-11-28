@@ -92,7 +92,9 @@
     text-decoration: none;
     letter-spacing: 2px;
 
-    transition: border-bottom 0.15s, padding-bottom 0.15s;
+    transition:
+      border-bottom 0.15s,
+      padding-bottom 0.15s;
 
     &:hover {
       padding-bottom: 4px;
