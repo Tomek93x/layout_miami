@@ -1,26 +1,45 @@
 @use '../utils/vars' as *;
 @use '../utils/mixins' as *;
 
+ul.pictures,
+ol.pictures {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
 .pictures {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-
+  justify-content: flex-start;
   box-sizing: border-box;
+
   width: 100%;
+  margin: 0;
+  padding: 0 20px;
+  padding-left: 20px;
+
+  list-style: none;
 
   @include for-tablet {
     margin-top: 24px;
+    padding: 0;
   }
 
   &__item {
     position: relative;
-    width: 100%;
-    margin-top: 48px;
-    padding-top: 100%;
+
+    flex-grow: 1;
+    width: calc(50% - 10px);
+    height: 0;
+    margin: 0;
+    padding-top: calc(50% - 10px);
+
+    overflow: hidden;
 
     @include for-tablet {
-      margin-top: 0;
+      flex-grow: 0;
+      height: auto;
       padding-top: 184px;
     }
 
@@ -41,8 +60,6 @@
     }
 
     &--distance {
-      margin-top: 40px;
-
       @include for-tablet {
         margin-top: 0;
       }
@@ -56,17 +73,33 @@
 
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
 
     object-fit: cover;
+    object-position: center;
 
     @include for-desktop {
       transition: transform 0.2s;
 
       &:hover {
-        cursor: pointer;
         z-index: 1;
+        cursor: pointer;
         transform: scale(1.06);
       }
     }
+  }
+
+  &__title {
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 32px;
+    margin-left: 0;
+    padding-left: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: $c-font;
+    text-align: left;
   }
 }

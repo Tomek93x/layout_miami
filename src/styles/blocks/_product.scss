@@ -2,29 +2,22 @@
 @use '../utils/mixins' as *;
 
 .product {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  box-sizing: border-box;
-  width: 100%;
+  @include grid;
 
   &__recommend {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    grid-column: span 2;
 
     @include for-tablet {
-      width: calc(50% - 10px);
+      grid-column: 2 / 6;
     }
 
     @include for-desktop {
-      width: calc((100% - 40px) / 3);
+      grid-column: span 4;
       transition: transform 0.2s;
 
       &:hover {
         cursor: pointer;
-        transform: scale(1.06);
+        transform: scale(106%);
       }
     }
   }
@@ -47,24 +40,25 @@
       @include for-tablet {
         letter-spacing: 0;
       }
+
+      @include for-desktop {
+        letter-spacing: 0;
+      }
     }
   }
 
   &__photo {
-    width: 100%;
-    height: auto;
     margin-top: 12px;
     margin-bottom: 32px;
 
-    object-fit: cover;
-
     @include for-tablet {
-      aspect-ratio: 1 / 1;
-      max-width: 392px;
+      width: 392px;
+      height: 392px;
     }
 
     @include for-desktop {
-      max-width: 324px;
+      width: 324px;
+      height: 324px;
     }
 
     &--smart-speaker {
