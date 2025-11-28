@@ -2,6 +2,10 @@
 @use '../utils/mixins' as *;
 
 .title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
   margin-top: 0;
   margin-bottom: 0;
 
@@ -28,12 +32,15 @@
     position: relative;
     z-index: 1;
 
+    justify-content: center;
+
     font-weight: 700;
     font-style: normal;
     text-align: center;
   }
 
   &--left {
+    justify-content: flex-start;
     text-align: left;
   }
 }

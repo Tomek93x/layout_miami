@@ -2,50 +2,38 @@
 @use '../utils/mixins' as *;
 
 .burger {
-  &::before {
+  /* Wspólne ustawienia dla obu stanów ikonki */
+  &::before,
+  &::after {
     content: '';
 
     display: inline-block;
 
+    /* Wymiary Mobile */
     width: 18px;
     height: 12px;
 
+    background-size: cover;
+
+    /* Wymiary Tablet i Desktop (są takie same, więc wystarczy jedna reguła) */
+    @include for-tablet {
+      width: 24px;
+      height: 16px;
+    }
+  }
+
+  /* Ikonka domyślna */
+  &::before {
     background-image: url('../images/photos/burger.svg');
-    background-size: cover;
-
-    @include for-tablet {
-      width: 24px;
-      height: 16px;
-    }
-
-    @include for-desktop {
-      width: 24px;
-      height: 16px;
-    }
   }
 
+  /* Ikonka po najechaniu (domyślnie ukryta) */
   &::after {
-    content: '';
-
     display: none;
-
-    width: 18px;
-    height: 12px;
-
     background-image: url('../images/photos/burger-hover.svg');
-    background-size: cover;
-
-    @include for-tablet {
-      width: 24px;
-      height: 16px;
-    }
-
-    @include for-desktop {
-      width: 24px;
-      height: 16px;
-    }
   }
 
+  /* Efekt Hover - zamiana ikon */
   &:hover {
     &::before {
       display: none;
@@ -56,6 +44,7 @@
     }
   }
 
+  /* Ukryty tekst dla czytników ekranowych */
   &__label {
     @include visually-hidden;
   }

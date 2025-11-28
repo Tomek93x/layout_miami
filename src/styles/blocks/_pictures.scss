@@ -2,7 +2,12 @@
 @use '../utils/mixins' as *;
 
 .pictures {
-  @include grid;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
 
   @include for-tablet {
     margin-top: 24px;
@@ -10,11 +15,13 @@
 
   &__item {
     position: relative;
+
     width: 100%;
     margin-top: 48px;
     padding-top: 100%;
 
     @include for-tablet {
+      margin-top: 0;
       padding-top: 184px;
     }
 
@@ -24,41 +31,42 @@
 
     &--big {
       @include for-tablet {
-        grid-column: span 4;
-      }
-
-      @include for-desktop {
-        grid-column: span 8;
+        width: calc(66.67% - 10px);
       }
     }
 
     &--small {
       @include for-tablet {
-        grid-column: span 2;
-      }
-
-      @include for-desktop {
-        grid-column: span 4;
+        width: calc(33.33% - 10px);
       }
     }
 
     &--distance {
       margin-top: 40px;
+
+      @include for-tablet {
+        margin-top: 0;
+      }
     }
   }
 
   &__image {
     position: absolute;
     top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
 
     @include for-desktop {
       transition: transform 0.2s;
 
       &:hover {
-        cursor: pointer;
         z-index: 1;
-        transform: scale(106%);
+        cursor: pointer;
+        transform: scale(1.06);
       }
     }
   }

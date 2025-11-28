@@ -17,32 +17,45 @@
   }
 
   &__content {
-    @include grid;
+    /* ZMIANA NA FLEXBOX */
+    display: flex;
+    flex-wrap: wrap; /* Pozwala elementom spadać pod siebie na małych ekranach */
+    gap: 20px; /* Odstęp między kolumnami */
 
-    gap: 0 20px;
+    /* Opcjonalnie: wyrównanie w pionie */
+    align-items: flex-start;
   }
 
   &__title {
-    grid-column: span 2;
+    box-sizing: border-box;
+
+    /* Mobile: 100% szerokości */
+    width: 100%;
 
     @include for-tablet {
-      grid-column: span 3;
+      /* Tablet: też 100% (według poprzedniego kodu span 3 przy małym gridzie, ale tu bezpieczniej 100) */
+      width: 100%;
     }
 
     @include for-desktop {
-      grid-column: 1 / 6;
+      /* Desktop: 5 kolumn z 12 to ok. 41.6% minus połowa gapu */
+      width: calc(41.66% - 10px);
     }
   }
 
   &__article {
-    grid-column: span 2;
+    box-sizing: border-box;
+
+    /* Mobile: 100% szerokości */
+    width: 100%;
 
     @include for-tablet {
-      grid-column: span 3;
+      width: 100%;
     }
 
     @include for-desktop {
-      grid-column: 6 / 11;
+      /* Desktop: 5 kolumn z 12 */
+      width: calc(41.66% - 10px);
     }
   }
 }
