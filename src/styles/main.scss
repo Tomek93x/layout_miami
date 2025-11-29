@@ -21,3 +21,9 @@
 @use 'blocks/split';
 @use 'blocks/buttons';
 @use './utils/reset' as *;
+
+.page__body--no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  touch-action: none;
+}

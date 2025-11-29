@@ -5,13 +5,10 @@
   display: block;
 
   box-sizing: border-box;
-
-
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
-
 
   @include for-tablet {
     @include grid;
