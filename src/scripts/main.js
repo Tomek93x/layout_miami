@@ -1,15 +1,11 @@
 'use strict';
 
 function handleMenuState() {
-  // Sprawdzamy hash w URL
   if (window.location.hash === '#menu') {
-    // Używamy nazwy klasy zgodnej z CSS
     document.body.classList.add('page__body--no-scroll');
 
     const menu = document.getElementById('menu');
     if (menu) {
-      // Resetujemy style inline, jeśli CSS obsługuje animację (zalecane)
-      // LUB zostawiamy tak jak masz, jeśli CSS tego nie robi
       menu.style.opacity = '1';
       menu.style.visibility = 'visible';
       menu.style.transform = 'translateX(0)';
