@@ -11,14 +11,11 @@ ol.pictures {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start;
+  justify-content: space-between;
 
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  padding: 0 20px;
-  padding-left: 20px;
-
   list-style: none;
 
   @include for-tablet {
