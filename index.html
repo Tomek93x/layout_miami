@@ -30,6 +30,22 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      body.page__body--no-scroll {
+        overflow: hidden !important;
+        height: 100vh !important;
+        position: fixed !important;
+        width: 100% !important;
+        top: 0 !important;
+      }
+
+      #menu {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: 100vh;
+      }
+    </style>
   </head>
   <body class="body">
     <header
@@ -219,15 +235,11 @@
               <picture>
                 <source
                   media="(min-width: 1260px)"
-                  class="pictures__image"
                   srcset="src/images/photos/earbuds-big.jpg"
-                  alt="earbuds-big"
                 />
                 <source
-                  media="(min-width: 744px)"
-                  class="pictures__image"
+                  media="(min-width: 550px)"
                   srcset="src/images/photos/earbuds-mid.jpg"
-                  alt="earbuds-mid"
                 />
                 <img
                   class="pictures__image"
@@ -242,15 +254,11 @@
               <picture>
                 <source
                   media="(min-width: 1260px)"
-                  class="pictures__image"
                   srcset="src/images/photos/headphones-big.jpg"
-                  alt="headphones-big"
                 />
                 <source
-                  media="(min-width: 744px)"
-                  class="pictures__image"
+                  media="(min-width: 550px)"
                   srcset="src/images/photos/headphones-mid.jpg"
-                  alt="headphones-mid"
                 />
                 <img
                   class="pictures__image"
@@ -272,15 +280,11 @@
               <picture>
                 <source
                   media="(min-width: 1260px)"
-                  class="pictures__image"
                   srcset="src/images/photos/speaker-2-big.jpg"
-                  alt="speaker-2-big"
                 />
                 <source
-                  media="(min-width: 744px)"
-                  class="pictures__image"
+                  media="(min-width: 550px)"
                   srcset="src/images/photos/speaker-2-mid.jpg"
-                  alt="speaker-2-mid"
                 />
                 <img
                   class="pictures__image"
@@ -295,15 +299,11 @@
               <picture>
                 <source
                   media="(min-width: 1260px)"
-                  class="pictures__image"
                   srcset="src/images/photos/speaker-1-big.jpg"
-                  alt="speaker-1-big"
                 />
                 <source
-                  media="(min-width: 744px)"
-                  class="pictures__image"
+                  media="(min-width: 550px)"
                   srcset="src/images/photos/speaker-1-mid.jpg"
-                  alt="speaker-1-mid"
                 />
                 <img
                   class="pictures__image"
@@ -323,15 +323,11 @@
               <picture>
                 <source
                   media="(min-width: 1260px)"
-                  class="pictures__image"
                   srcset="src/images/photos/sunglasses-2-big.jpg"
-                  alt="sunglasses-2-big"
                 />
                 <source
-                  media="(min-width: 744px)"
-                  class="pictures__image"
+                  media="(min-width: 550px)"
                   srcset="src/images/photos/sunglasses-2-mid.jpg"
-                  alt="sunglasses-2-mid"
                 />
                 <img
                   class="pictures__image"
@@ -346,15 +342,11 @@
               <picture>
                 <source
                   media="(min-width: 1260px)"
-                  class="pictures__image"
                   srcset="src/images/photos/sunglasses-1-big.jpg"
-                  alt="sunglasses-1-big"
                 />
                 <source
-                  media="(min-width: 744px)"
-                  class="pictures__image"
+                  media="(min-width: 550px)"
                   srcset="src/images/photos/sunglasses-1-mid.jpg"
-                  alt="sunglasses-1-mid"
                 />
                 <img
                   class="pictures__image"
@@ -498,53 +490,46 @@
     </main>
 
     <footer class="footer"></footer>
+
+    <script>
+      'use strict';
+
+      function handleMenuState() {
+        const isMenuOpen = window.location.hash === '#menu';
+        const menu = document.getElementById('menu');
+
+        if (isMenuOpen) {
+          document.body.classList.add('page__body--no-scroll');
+
+          if (menu) {
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            menu.style.transform = 'translateX(0)';
+          }
+        } else {
+          document.body.classList.remove('page__body--no-scroll');
+
+          if (menu) {
+            menu.style.opacity = '0';
+            menu.style.visibility = 'hidden';
+            menu.style.transform = 'translateX(100%)';
+          }
+        }
+      }
+
+      window.addEventListener('hashchange', handleMenuState);
+
+      document.addEventListener('DOMContentLoaded', function() {
+        handleMenuState();
+
+        const form = document.getElementById('contactForm');
+        if (form) {
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formularz wysłany!');
+          });
+        }
+      });
+    </script>
   </body>
 </html>
-<script>
-  'use strict';
-
-  function handleMenuState() {
-    // Sprawdzamy, czy menu jest otwarte (czy w adresie jest #menu)
-    const isMenuOpen = window.location.hash === '#menu';
-    const menu = document.getElementById('menu');
-
-    if (isMenuOpen) {
-      // 1. ZABLOKUJ scroll strony
-      document.body.classList.add('page__body--no-scroll');
-
-      // 2. Pokaż menu
-      if (menu) {
-        menu.style.opacity = '1';
-        menu.style.visibility = 'visible';
-        menu.style.transform = 'translateX(0)';
-      }
-    } else {
-      // 1. ODBLOKUJ scroll strony
-      document.body.classList.remove('page__body--no-scroll');
-
-      // 2. Schowaj menu
-      if (menu) {
-        menu.style.opacity = '0';
-        menu.style.visibility = 'hidden';
-        menu.style.transform = 'translateX(100%)';
-      }
-    }
-  }
-
-  // Reaguj na zmianę hasha (kliknięcie hamburgera lub zamknięcia)
-  window.addEventListener('hashchange', handleMenuState);
-
-  // Uruchom przy starcie (np. po odświeżeniu z otwartym menu)
-  document.addEventListener('DOMContentLoaded', function() {
-    handleMenuState();
-
-    // Obsługa formularza (opcjonalnie, jeśli nadal potrzebujesz)
-    const form = document.getElementById('contactForm');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Formularz wysłany!');
-      });
-    }
-  });
-</script>

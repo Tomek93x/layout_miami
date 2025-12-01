@@ -18,30 +18,34 @@
 
   &__content {
     display: flex;
-    flex-direction: column; /* Mobile: jeden pod drugim */
+    flex-direction: column;
     gap: 20px;
     width: 100%;
 
-    @include for-desktop {
-      flex-direction: row; /* Desktop: obok siebie */
+    @include for-tablet {
+      flex-direction: row;
+      gap: 24px;
       align-items: flex-start;
+      justify-content: space-between;
     }
   }
 
   &__title {
-    width: 100%; /* Mobile: pełna szerokość */
+    width: 100%;
 
-    @include for-desktop {
-      width: 41.66%; /* Odpowiednik 5 kolumn */
+    @include for-tablet {
+      width: 41.66%;
+      margin-bottom: 0;
     }
   }
 
   &__article {
-    width: 100%; /* Mobile: pełna szerokość */
+    width: 100%;
 
-    @include for-desktop {
-      width: 41.66%; /* Odpowiednik 5 kolumn */
-      margin-left: auto; /* Przesuwa na prawo (odpowiednik pustej kolumny) */
+    @include for-tablet {
+      width: 41.66%;
+      margin-top: 0;
+      margin-left: auto;
     }
   }
 }

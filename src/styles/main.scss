@@ -23,7 +23,7 @@
 @use './utils/reset' as *;
 
 .page__body--no-scroll {
-  overflow: hidden;
   touch-action: none;
+  overflow: hidden;
   height: 100vh;
 }
